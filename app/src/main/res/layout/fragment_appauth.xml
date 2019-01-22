@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@color/browser_actions_title_color">
+
+    <include layout="@layout/auth_status"/>
+
+    <Button
+            android:text="@string/sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/button_signin"
+            android:textAllCaps="false"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+    <Button
+            android:text="@string/sign_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/button_signout"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@android:color/holo_orange_dark"/>
+
+    <LinearLayout
+            android:id="@+id/button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+        <Button
+                android:text="@string/refresh_token"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/button_refresh_token"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:backgroundTint="@color/colorPrimary"/>
+
+        <Button
+                android:text="@string/get_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/button_get_info"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:backgroundTint="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/token_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp">
+
+            <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/refresh_token"
+                    android:textColor="?attr/colorButtonNormal"/>
+
+            <TextView
+                    android:id="@+id/token_info_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Refresh token returned"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/holo_orange_light"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp">
+
+            <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/token_expired"
+                    android:textColor="?attr/colorButtonNormal"/>
+
+            <TextView
+                    android:id="@+id/token_info_expire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Token expires at: 2016-01-01 12:00 UTC"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/holo_orange_light"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp">
+
+            <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/id_token"
+                    android:textColor="?attr/colorButtonNormal"/>
+
+            <TextView
+                    android:id="@+id/token_info_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="ID token returned"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/holo_orange_light"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/user_info"/>
+
+</LinearLayout>
